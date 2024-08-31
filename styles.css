@@ -1,0 +1,614 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2e2e2e; 
+    color: white; 
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(28, 28, 28, 0.7); 
+    backdrop-filter: blur(10px); 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav {
+    margin-right: 50px; 
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ddd; 
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+nav ul li a.active {
+    color: #ffffff;
+    background-color: #007bff; 
+}
+
+nav ul li a:hover {
+    color: #ffffff; 
+    background-color: #0056b3; 
+}
+
+section {
+    padding: 100px 20px;
+    margin-top: 80px; 
+    background-color: #2e2e2e; 
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.6s ease, transform 0.6s ease; 
+}
+
+section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+section.out-of-view {
+    opacity: 0;
+    transform: translateY(20px); 
+}
+
+#home, #about, #hosts, #role, #discord {
+    margin-bottom: 100px; 
+}
+
+
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    background-color: #2e2e2e; 
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+}
+
+.home-image {
+    height: 300px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.home-text {
+    max-width: 600px;
+}
+
+.home-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.home-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+buttons {
+    background-color: #2e2e2e; 
+    color: white; 
+    border: none; 
+    padding: 10px 0px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    font-weight: bold; 
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#about {
+    padding: 100px 20px;
+    background-color: #2e2e2e; 
+    color: white; 
+    position: relative; 
+}
+
+.about-container {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between; 
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px; 
+    background-color: #222; 
+    position: relative;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.about-text {
+    max-width: 60%; 
+}
+
+.about-text h1 {
+    margin-top: 0;
+    font-size: 36px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-image {
+    width: 40%; 
+    height: auto;
+    margin-left: 20px;
+    border-radius: 8px; 
+}
+
+.sidebar {
+    position: absolute;
+    top: 20px;
+    left: -20%;
+    width: 200px;
+}
+
+.sidebar-content {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+.sidebar-content p a:hover {
+    color: #228b22; 
+}
+
+.profile-image {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    margin-bottom: 10px;
+}
+
+.sidebar-content h2 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.sidebar-content p a {
+    color: #a200ff; 
+    text-decoration: none;
+}
+
+.sidebar-content p a:hover {
+    color: #0056b3; 
+}
+
+#role {
+    padding: 20px;
+    background-color: #2e2e2e; 
+    text-align: center;
+}
+
+#role .role-button-container {
+    text-align: center;
+    margin-top: 30px; 
+}
+
+@keyframes breathing {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.role-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.role-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #7289da;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    animation: breathing 3s infinite; 
+}
+
+.role-button:hover {
+    background-color: #5b6eae; 
+}
+
+
+#role .role-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #7289da; 
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#role .role-button:hover {
+    background-color: #5b6eae;
+}
+
+#role p {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    color: #ff00ff;
+    font-weight: bold;
+}
+
+.roles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.role-item {
+    width: 200px; 
+    height: 300px; 
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; 
+}
+
+.role-item:hover {
+    transform: scale(1.05); 
+}
+
+.role-image {
+    height: 50%; 
+    overflow: hidden;
+}
+
+.role-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.role-text {
+    height: 50%; 
+    padding: 10px;
+    background-color: rgb(54, 54, 54);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.role-text p {
+    margin: 0;
+    font-size: 1em;
+    color: #333; 
+}
+
+#redirect-btn {
+    background-color: #2e2e2e; 
+    color: white;
+    border: none;
+    padding: 20px 40px; 
+    font-size: 24px; 
+    cursor: pointer;
+    border-radius: 10px; 
+    display: block;
+    margin: 20px auto;
+}
+
+#redirect-btn:hover {
+    background-color: #1a1a1a;
+}
+
+#discord-btns {
+    background-color: #7289da; 
+    color: white;
+    border: none;
+    padding: 20px 40px; 
+    font-size: 24px; 
+    cursor: pointer;
+    border-radius: 10px; 
+    display: block; 
+    margin: 20px auto; 
+}
+
+#discord-btn:hover {
+    background-color: #657ed8;
+}
+
+footer {
+    background-color: #1a1a1a; 
+    color: #ddd; 
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    color: #007bff; 
+}
+
+#roles {
+    padding: 20px;
+    background-color: #2e2e2e; 
+    text-align: center;
+}
+
+#role .role-button-containers {
+    text-align: center;
+    margin-top: 30px; 
+}
+
+@keyframes breathing {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.role-button-containers {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+.role-buttons {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #7289da; 
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    animation: breathing 3s infinite; 
+}
+
+.role-button:hover {
+    background-color: #5b6eae; 
+}
+
+
+#roles .role-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #7289da; 
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#roles .role-button:hover {
+    background-color: #5b6eae; 
+}
+
+#roles p {
+    margin-bottom: 0px;
+    font-size: 0.9em;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.roles-containers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px; 
+}
+.role-items {
+    width: 300px; 
+    height: 500px; 
+    background: #2e2e2e; 
+    border-radius: 15px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; 
+}
+
+.role-item:hovers {
+    transform: scale(1.05);
+}
+
+.role-images {
+    height: 50%; 
+    overflow: hidden;
+}
+
+.role-images img {
+    width: 40%;
+    height: -30%;
+    object-fit: cover; 
+}
+
+.role-texts {
+    height: 30%; 
+    padding: 90px;
+    background-color: rgb(54, 54, 54); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.role-texts p {
+    margin: 0;
+    font-size: 1em;
+    color: #333; 
+}
+
+@media (max-width: 768px) {
+    #about {
+        text-align: center; 
+    }
+
+    .about-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .about-image {
+        width: 80%; 
+        margin-left: 0; 
+        margin-bottom: 20px;
+    }
+
+    .sidebar {
+        position: static; 
+        width: 100%; 
+        margin-top: 20px; 
+    }
+}
+
+#rules {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    transform: translateY(-15%); 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    z-index: 2000;
+    display: none;
+    overflow: hidden;
+}
+
+#rules {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    transform: translateY(-15%); 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    z-index: 2000;
+    display: none; 
+    overflow: hidden;
+}
+
+.rules-content {
+    text-align: center;
+    max-width: 80%;
+    max-height: 80%;
+    padding: 20px;
+    background-color: #2e2e2e;
+    border-radius: 8px;
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+.rules-content::-webkit-scrollbar {
+    display: none; 
+}
+
+.rules-content {
+    scrollbar-width: none;
+}
+
+#continue-btn {
+    background-color: #28a745;
+}
+
+#continue-btn:hover {
+    background-color: #218838;
+}
