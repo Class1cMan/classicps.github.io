@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const titles = ["Classic Private Serverr", "Best Private Serverr", "To have fun with friendss", "Join now!!", "0 Fake onlinee"];
+    const titles = ["Classic Private Server", "Best Private Server", "To have fun with friends", "Join now!!", "0 Fake online"];
     let currentTitleIndex = 0;
     let currentCharIndex = 0;
     let typingForward = true;
@@ -99,7 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
             currentCharIndex++;
             if (currentCharIndex === currentTitle.length) {
                 typingForward = false;
-                setTimeout(updateTitle, 1500);
+                setTimeout(() => {
+                    updateTitle();
+                }, 1500);
                 return;
             }
         } else {
@@ -108,7 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentCharIndex === 0) {
                 typingForward = true;
                 currentTitleIndex = (currentTitleIndex + 1) % titles.length;
-                setTimeout(updateTitle, 500);
+                setTimeout(() => {
+                    updateTitle();
+                }, 500);
                 return;
             }
         }
